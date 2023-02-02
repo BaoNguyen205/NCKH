@@ -21,7 +21,7 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href="https://husc.edu.vn/" target="_blank">
+            <a class="navbar-brand m-0" href="https://thpt-khhue.thuathienhue.edu.vn/" target="_blank">
                 <!-- <img src="{{ url_for('static', filename='img.png') }}" class="navbar-brand-img h-100" alt="main_logo"> -->
                 <img src="static/img.png" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-1 font-weight-bold">Chuyên Khoa học Huế</span>
@@ -85,7 +85,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('static', filename='billing.html') }}">
+                    <a class="nav-link" href="dashboard.html">
+                    <!-- {{ url_for('static', filename='billing.html') }}"> -->
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
@@ -108,7 +109,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Billing</span>
+                        <span class="nav-link-text ms-1">Camera</span>
                     </a>
                 </li>
             </ul>
@@ -141,9 +142,29 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Temperature       </p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            $53,000
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Temperature</p>
+                                        <h5 class="font-weight-bolder mb-0"id="temp">
+                                        </h5> 
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div
+                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Humidity</p>
+                                        <h5 class="font-weight-bolder mb-0" id="humi">
                                         </h5>
                                     </div>
                                 </div>
@@ -163,31 +184,9 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Sensor's volts</p>
                                         <h5 class="font-weight-bolder mb-0">
-                                            $53,000
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            2,300
+                                            LOW
                                         </h5>
                                     </div>
                                 </div>
@@ -207,78 +206,47 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
+                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Alert</p>
                                         <h5 class="font-weight-bolder mb-0">
-                                            +3,462
+                                            NO DANGER
                                         </h5>
                                     </div>
                                 </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-            <hr>
-                <div class="col-xl-3 col-sm-6">
-                    <div class="card">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="numbers">
-                                        <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
-                                        <h5 class="font-weight-bolder mb-0">
-                                            $103,430
-                                        </h5>
+                <footer class=" footer pt-3 ">
+                    <div class=" container-fluid">
+                                <div class="row align-items-center justify-content-lg-between">
+                                    <div class="copyright text-center text-sm text-muted text-lg-start">
+                                        <br>Đề tài: "Thiết kế và chế tạo mô hình robot 2 bánh tự cân bằng ứng dụng vào công tác tìm kiếm cứu nạn và quan trắc môi trường".</br>
+                                        ©
+                                        <script>
+                                            document.write(new Date().getFullYear())
+                                        </script>,
+                                        made with <i class="fa fa-heart"></i> by
+                                        <a href="https://www.facebook.com/Baonguynn205/" class="font-weight-bold"
+                                            target="_blank">Bảo Nguyễn.</a>
                                     </div>
                                 </div>
-                                <div class="col-4 text-end">
-                                    <div
-                                        class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                                    </div>
-                                </div>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="container-fluid px-sm-6 px-xl-2 ">
-                    <div class="card">
-                        <div class="card-body p-4 ">
-                            <img id="bg" class="img-fluid rounded" alt="" src="{{ url_for('video_feed') }}" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer class="footer pt-3  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.facebook.com/Baonguynn205/" class="font-weight-bold"
-                                    target="_blank">Bảo Nguyễn.</a>
-
-                            </div>
-                        </div>
-
-                        </ul>
-                    </div>
-                </div>
-        </div>
-        </footer>
+                    </footer>
         </div>
     </main>
+
+<script>
+var x = Math.floor(Math.random() * (23 - 21 + 1) ) + 21 +Math.random();
+x= Math.round(x * 100) / 100
+document.getElementById("temp").innerHTML = x+"*C";
+var y = Math.floor(Math.random() * (23 - 21 + 1) ) + 21 +Math.random();
+y= Math.round(y * 100) / 100
+document.getElementById("humi").innerHTML = y+"%";
+
+</script>
 </body>
 
 </html>
